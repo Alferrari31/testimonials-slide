@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials slide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    img {
+      max-width: 100%;
+      display: inline-block;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+
+    }
+
+    .container {
+      align-items: center;
+
+      display: grid;
+      /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+      grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+      max-width: 800px;
+      justify-content: center;
+      margin: auto;
+
+    }
+
+    .img-wrap {
+      position: relative;
+    }
+
+    .text-wrap {
+      position: relative;
+    }
+
+    .text-wrap::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: url('./images/pattern-quotes.svg');
+      background-repeat: no-repeat;
+      top: -3rem;
+      left: 1rem;
+    }
+
+    .text-comment {
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      color: rgb(124, 114, 133);
+      font-size: 1.2rem;
+      font-weight: lighter;
+      font-style: italic;
+    }
+
+    .bold {
+      font-weight: bolder;
+    }
+
+    p {
+      color: rgb(124, 114, 133);
+
+    }
+
+    .wrap-btn {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .btn {
+      border: none;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      transition: 0.5s;
+      border: rgb(194, 192, 192) solid 1px;
+      cursor: pointer;
+    }
+
+    .prev {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .next {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .btn:hover {
+      background-color: black;
+      color: white;
+      transform: scale(0.85);
+    }
+
+    @media only screen and (max-width: 768px) {
+      .text-wrap {
+        text-align: center;
+        order: 2;
+        margin-top: 4rem;
+
+      }
+
+      .text-wrap::after {
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        left: 9rem;
+      }
+
+      .text-comment {
+        font-size: 1rem;
+        font-style: italic;
+      }
+
+      .img-wrap {
+        text-align: center;
+      }
+
+      .wrap-btn {
+        left: 9.5rem;
+      }
+
+      .btn {
+        padding: 10px;
+      }
+
+      img {
+        width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container review">
+      <div class="text-wrap">
+        <h4 class="text-comment" id="info">"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus,
+          officiis
+          aspernatur.
+          Tempora tenetur repellat cupiditate iste dolores. A, repellat iure Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dicta, debitis? "</h4>
+        <p><span class="bold" id="author">Tanya Sinciar</span> UX Engineer</p>
+      </div>
+      <div class="img-wrap">
+        <img src="./images/image-tanya.jpg" id="person-img" alt="tanya">
+        <div class="wrap-btn">
+          <button class="btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>
